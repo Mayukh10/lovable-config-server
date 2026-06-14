@@ -1,16 +1,17 @@
 server:
   port: 9050
-  servlet.context-path: /account
+  servlet:
+    context-path: /account
 
 spring:
   datasource:
     url: jdbc:postgresql://localhost:9010/lovable-account-db
-    username: user
-    password: password
+    username: postgres
+    password: postgres
     driver-class-name: org.postgresql.Driver
 
-Stripe
+stripe:
   api:
-    key:
+    key: ${STRIPE_API_KEY:}
   webhook:
-    secret: 
+    secret: ${STRIPE_WEBHOOK_SECRET:}
