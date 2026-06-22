@@ -7,9 +7,14 @@ spring:
       server:
         webflux:
           routes:
-            - id: ACCOUNT-SERVICE
-              uri: lb://account-service
+            - id: account-service
+              uri: lb://ACCOUNT-SERVICE
               predicates:
                 - Path=/api/v1/account/**
               filters:
                 - StripPrefix=2
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
