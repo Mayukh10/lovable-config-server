@@ -7,7 +7,7 @@ spring:
       server:
         webflux:
           routes:
-            - id: account-service
+            - id: ACCOUNT-SERVICE
               uri: lb://account-service
               predicates:
                 - Path=/api/v1/account/**
